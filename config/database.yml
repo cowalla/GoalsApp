@@ -4,9 +4,9 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
+  adapter: postgresql
+  database: goalsapp_development
+  host: localhost
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
@@ -19,9 +19,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: postgresql
-   encoding: unicode
-   database: myapp_production
-   pool: 5
-   username: myapp
-   password: foobies
+      adapter: postgresql
+      database: goalsapp_production
+      host: localhost
+      timeout: 5000
