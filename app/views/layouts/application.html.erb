@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GoalsApp</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<<<<<<< HEAD
+	<div id="header">
+	<h1><%= link_to("Goals App", root_url %></h1>
+	</div>
+=======
+>>>>>>> parent of 1a294b5... Adds awesome styling and cheers/leaderboards
+
+	<% if flash[:errors] && !flash[:errors].empty? %>
+		<%= flash[:errors] %>
+		<%end%>
+
+
+<% if current_user %>
+	<%= current_user.username %>
+	<%= button_to("Sign Out", session_url, method: "delete") %>
+<% else %>
+	<%= link_to("Sign In", new_session_url) %>
+	<%= link_to("Sign Up", new_user_url )%>
+<% end %>
+
+<%= yield %>
+
+
+
+</body>
+</html>
